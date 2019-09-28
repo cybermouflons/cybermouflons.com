@@ -1,6 +1,7 @@
 ---
 title: '[Facebook CTF] osquery_game'
 published: true
+author: koks
 ---
 
 ```

@@ -4,6 +4,10 @@ layout: default
 
 <article>
   <h2>{{ page.title }}</h2>
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">{{ page.date | date_to_string }}</time>
+  <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">{{
+    page.date | date_to_string
+  }}</time>
   {{ content }}
+  <center>🐏</center>
+  <center>{{ page.author }}</center>
 </article>
