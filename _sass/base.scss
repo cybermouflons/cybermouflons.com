@@ -257,8 +257,16 @@ hr {
 */
 
 a {
-  color: #63c0f5;
-  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  color: #fff;
+  text-decoration: none;
+}
+
+header > div > a {
+   text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid $conifer;
 }
 
 a:active,
