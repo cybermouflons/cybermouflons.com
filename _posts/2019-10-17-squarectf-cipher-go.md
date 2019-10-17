@@ -6,7 +6,7 @@ author: koks
 
 We are given the following encryption and decryption functions along with 5 plaintexts and 5+1 ciphertexts. One of the ciphertext files is `flag.txt.enc`.
 
-```
+```go
 func encrypt(plaintext []byte, key []byte) string {
   x := uint64(binary.LittleEndian.Uint64(key[0:]))
   y := uint64(binary.LittleEndian.Uint64(key[8:]))
@@ -89,7 +89,7 @@ We also use the knowledge/math of what are the 2 possible outcomes when a number
 - Left Rotation: 
 	- The left-most bit goes away and a 0 comes in on the right (multiply by 2)	- The left-most bit goes away and an 1 comes in on the right (multiply by 2 and add 1)
 
-```
+```python
 import claripy
 from binascii import unhexlify
 from hashlib import md5
