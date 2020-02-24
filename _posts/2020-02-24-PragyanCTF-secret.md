@@ -1,5 +1,5 @@
 ---
-title: '[PragyanCTF 2020] Secret'
+title: '[PragyanCTF] Secret'
 published: true
 author: Christos.S
 ---
