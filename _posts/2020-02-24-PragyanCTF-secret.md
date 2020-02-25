@@ -47,6 +47,8 @@ So now that I have a basic understanding of the binary I can think of the attack
 2. Write the `system` function's address in the `__free_hook`
 3. Free an address the points to the string `/bin/sh`
 
+> In step 2 I could as easily overwriten the GOT entry of some funtion, since the binary only has `Partial RELRO`; but I wanted to try something different.
+
 Before I start I created 3 functions to interface with the 3 main functionalities of the binary:
 1. Create Task
 2. Remove Task
