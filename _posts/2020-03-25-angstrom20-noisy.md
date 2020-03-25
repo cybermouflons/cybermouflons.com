@@ -55,8 +55,8 @@ Our plan is then as follows:
 
 1. Average each set of 10 points into 1 value.
 2. Iterate over the set of averages, progressively increasing the expected length of the plaintext with each iteration
-	2,1. Average the values at each position of the plaintext, for each expected length of the plaintext
-	2,2. If there are any invalid values, discard this plaintext length and move to the next
+	1. Average the values at each position of the plaintext, for each expected length of the plaintext
+	2. If there are any invalid values, discard this plaintext length and move to the next
 3. Print valid plaintext strings.
 
 Note that when I say 'Average', I don't mean literally averaging stuff. The positive signal is around 0.5, and the negative signal is around -0.5. What I mean is I am creating a confidence rating about whether the value is positive or negative. The sign of the value will indicate the sign of the signal, and the magnitude of the rating will determine how confident we are than the sign is correct.
