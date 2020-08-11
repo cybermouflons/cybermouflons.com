@@ -1,3 +1,9 @@
+---
+title: '[SpiderLabsCTF] Remote Management System'
+published: true
+author: ishtar
+---
+
 # Remote Management System (Web)
 At first, we provided real details in order to understand the application\'s logic.
     + Using `sshpass` utility, the server was connecting to an SSH server using the provided details
