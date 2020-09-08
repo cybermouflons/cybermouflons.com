@@ -1,109 +1,32 @@
-# The Hacker-Blog theme
+# CYberMouflons Theme
 
-*Hacker-Blog is a minimalistic, responsive jekyll theme built for hackers. It is based on the [hacker theme](https://github.com/pages-themes/hacker) for project pages.*
+This is the official jekyll theme for the CYberMouflons website. It follows minimalistic principles and is based on [Klise](https://github.com/piharpi/jekyll-klise.git) theme.
 
-Demo: [https://ashishchaudhary.in/hacker-blog](https://ashishchaudhary.in/hacker-blog)
+## Installation
 
-### Included
-
-1. Pagination
-2. SEO tags
-3. Archive Page
-4. RSS
-5. Sitemap 
-
-## Usage
-
-1. Fork and Clone this repository
-2. Customize your blog
-3. Add a new post in `_posts/` directory with proper name format (as shown in placeholder posts)
-4. Commit and push to master 
-
-## Local Build
-
-If you want to see the changes before pushing the blog to Github, do a local build.
-
-1. [`gem install jekyll`](https://jekyllrb.com/docs/installation/#install-with-rubygems)
-2. `gem install jekyll-seo-tag`
-3. (`cd` to the blog directory, then:) `jekyll serve --watch --port 8000`
-4. Go to `http://0.0.0.0:8000/` in your web browser.
-
-*Note: In case you have set a `baseurl` different than `/` in `_config.yml`, go to `http://0.0.0.0:8000/BASEURL/` instead.*
-
-### Local build using docker
+Run local server:
 
 ```bash
-docker run --rm -p 8000:8000 \
-  --volume="LOCATION_OF_YOUR_JEKYLL_BLOG:/srv/jekyll" \
-  -it tocttou/jekyll:3.5 \
-  jekyll serve --watch --port 8000
+$ git clone ...
+$ cd 
+$ bundle install
+$ bundle exec jekyll serve 
 ```
 
-Replace `LOCATION_OF_YOUR_JEKYLL_BLOG` with the full path of your blog repository. Visit `http://localhost:8000/` to access the blog.
+Navigate to `localhost:4000`. You're Welcome, Fork and be Stargazer.
 
-*Note: In case you have set a `baseurl` different than `/` in `_config.yml`, go to `http://0.0.0.0:8000/BASEURL/` instead.*
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/piharpi/jekyll-klise) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/piharpi/jekyll-klise)
 
-## Customizing
+## Limitation
 
-### Configuration variables
+- Since [`jekyll-postfiles`](https://github.com/nhoizey/jekyll-postfiles#compatibility) plugin isn't supported by github pages, this cause will make your site problems, path broken or post images won't show up, you can host alternatively using likes [netlify.com](https://netlify.com), [vercel.com](https://vercel.com) or [surge.sh](https://surge.sh) services, which support 3rd party.
 
-Edit the `_config.yml` file and set the following variables:
+## Contributing
 
-```yml
-title: [The title of your blog]
-description: [A short description of your blog's purpose]
-author:
-  name: [Your name]
-  email: [Your email address]
-  url: [URL of your website]
+If you see any typos or formatting errors in a post, or want to helping reduce backlogs or any other issue that needs to be addressed, please do not hesitate to open a pull request and fix it!, please read [contributing](./CONTRIBUTING.md) before PR.
 
-baseurl: [The base url for this blog.]
-
-paginate: [Number of posts in one paginated section (default: 3)]
-owner: [Your name]
-year: [Current Year]
-```
-
-*Note: All links in the site are prepended with `baseurl`. Default `baseurl` is `/`. Any other baseurl can be setup like `baseurl: /hacker-blog`, which makes the site available at `http://domain.name/hacker-blog`.*
-
-Additionally, you may choose to set the following optional variables:
-
-```yml
-google_analytics: [Your Google Analytics tracking ID]
-```
-
-### About Page
-
-Edit `about.md`
-
-### Layout
-
-If you would like to modify the site style:
-
-**HTML**
-
-Footer: Edit `_includes/footer.html`
-
-Header: Edit `_includes/header.html`
-
-Links in the header: Edit `_includes/links.html`
-
-Meta tags, blog title display, and additional CSS: Edit `_includes/head.html`
-
-Index page layout: Edit `_layouts/default.html`
-
-Post layout: Edit `_layouts/post.html`
-
-**CSS**
-
-Site wide CSS: Edit `_sass/base.scss`
-
-Custom CSS: Make `_sass/custom.scss` and use it. Then add `@import "custom";` to `css/main.scss`
-
-**404 page**
-
-Edit `404.md`
+Yeaaa feel free to open a pull request.
 
 ## License
 
-CC0 1.0 Universal
+This project is open source and available under the [MIT License](LICENSE).

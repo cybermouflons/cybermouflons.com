@@ -1,6 +1,9 @@
 ---
+title: CYberMouflons
+permalink: /about/
 layout: page
-title: About
+excerpt: Cypriot Cybersecurity Community
+comments: false
 ---
 
 We are an open group of students, professionals, `.*`, with `10` things in common:
@@ -11,7 +14,6 @@ We are an open group of students, professionals, `.*`, with `10` things in commo
 </ol>
 
 Our shared goal is to learn and practice our InfoSec skills in a collaborative and fun environment.
-
 We usually do that by participating in CTF competitions, meetups, and workshops.
 
 <center>🐏🐏🐏</center>
