@@ -1,0 +1,19 @@
+- title: home
+  url: /
+  external: false
+
+- title: wiki
+  url: "https://wiki.cybermouflons.com"
+  external: true
+
+- title: blog
+  url: /blog/
+  external: false
+
+- title: projects
+  url: /blog/
+  external: false
+
+- title: about
+  url: /about/
+  external: false
