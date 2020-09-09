@@ -179,8 +179,6 @@
   }
 }
 
-
-
 // Intro 
 .intro {
   text-align: center;
@@ -211,11 +209,19 @@
     font-family: CfGlitchCityRegular;
     font-size: 2em;
     margin-bottom: 4px;
-  }
 
+    @include media-query($on-mobile) {
+      font-size: 1.5em;
+    }
+  }
+  
   .intro-subheading {
     margin: 0 auto;
     font-weight: $light-weight;
+
+    @include media-query($on-mobile) {
+      font-size: 1.2em;
+    }
   }
 
   .description {
@@ -455,6 +461,12 @@
   width: 250px;
   height: 250px;
   margin-bottom: 2em;
+
+  @include media-query($on-mobile) {
+    width: 200px;
+    height: 200px;
+  }
+  
 }
 
 ._progress-wrapper {

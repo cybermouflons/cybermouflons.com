@@ -4,4 +4,5 @@ _site
 .vercel
 .vendor
 vendor
+.bundle
 **/.DS_Store
