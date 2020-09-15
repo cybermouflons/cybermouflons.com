@@ -3,6 +3,7 @@ title: '[PragyanCTF] Secret'
 published: true
 tags: [writeup, pwn, fmtstr]
 author: Christos.S
+category: ctf
 ---
 
 

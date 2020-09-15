@@ -3,6 +3,7 @@ title: '[RED CSAW CTF 2019] NevernotePickle'
 published: true
 tags: [writeup, web, deserialization, pickle]
 author: sAINT_Barber
+category: ctf
 ---
 
 Challenge description:

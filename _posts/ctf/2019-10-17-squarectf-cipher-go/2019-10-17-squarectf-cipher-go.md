@@ -3,6 +3,7 @@ title: '[Square CTF] Go cipher'
 published: true
 tags: [writeup, crypto]
 author: koks
+category: ctf
 ---
 
 We are given the following encryption and decryption functions along with 5 plaintexts and 5+1 ciphertexts. One of the ciphertext files is `flag.txt.enc`.
