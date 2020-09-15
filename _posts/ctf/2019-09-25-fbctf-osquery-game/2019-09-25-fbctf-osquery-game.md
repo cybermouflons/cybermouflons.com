@@ -3,6 +3,7 @@ title: '[Facebook CTF 2019] osquery_game'
 published: true
 tags: [writeup, misc, fbctf19]
 author: koks
+category: ctf
 ---
 
 ```

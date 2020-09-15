@@ -3,6 +3,7 @@ title: '[RED CSAW CTF 2019] NevernoteCSP'
 published: true
 tags: [writeup, web, csp]
 author: sAINT_Barber
+category: ctf
 ---
 
 First we are greeted with the challenge description

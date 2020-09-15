@@ -3,6 +3,7 @@ title: '[ångstromCTF-2020] Noisy'
 published: true
 tags: [writeup, misc]
 author: AltAcc
+category: ctf
 ---
 
 # Noisy Challenge Writeup

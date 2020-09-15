@@ -3,6 +3,7 @@ title: '[SpiderLabsCTF] Remote Management System'
 published: true
 tags: [writeup, web, rce, command_injection]
 author: ishtar
+category: ctf
 ---
 
 # Remote Management System (Web)
