@@ -14,7 +14,7 @@ We decided to test if the application would reflect back any output from the abo
 
 We tried several payloads in order to identify other vulnerabilities like XXE, SSTI or characters that would break the applications logic. None of them worked.
 
-Going back to the application, we tried to find a command injection vulnerability by manually trying to fuzz the available parameters using Burp. Good news, RCE was possible thus we started enumerating the server.
+Going back to the application, we tried to find a command injection vulnerability by manually fuzzing the available parameters using Burp. Good news, RCE was possible thus we started enumerating the server.
 
 ```
 POST / HTTP/1.1
