@@ -7,12 +7,12 @@ author: ishtar
 
 # Remote Management System (Web)
 At first, we provided real details in order to understand the application\'s logic.
-    + Using `sshpass` utility, the server was connecting to an SSH server using the provided details
+    + Using the `sshpass` utility, the server was connecting to an SSH server using the provided details
     + Upon login, the command `show config` was issued
 
 We decided to test if the application would reflect back any output from the above command into the webpage. Thus, using `sudo cp /bin/cat /bin/show` we create a copy of the `cat` utility called `show` and using `echo "<script>aler(1)</script>" > config` we create the file that the server will request to read. Interestingly, the server reflected back the contents of the `config` file in the webpage and it was also vulnerable to XSS.
 
-We tried several "payloads" in order to identify any other vulnerabilities like XXE, SSTI or characters that would break the applications logic. None of them worked.
+We tried several payloads in order to identify other vulnerabilities like XXE, SSTI or characters that would break the applications logic. None of them worked.
 
 Going back to the application, we tried to find a command injection vulnerability by manually trying to fuzz the available parameters using Burp. Good news, RCE was possible thus we started enumerating the server.
 
@@ -33,7 +33,7 @@ Upgrade-Insecure-Requests: 1
 hostname=/&port=1&username=/&password=-w+less+-FX+/etc/passwd+%0a
 ```
 
-After reading both `app.py` and `remoteapp.pyc` files (decompiled) we were unable to find the flag. We also used `grep FLAG -R /` in order to recursively check each file for the flag, without any luck.
+After reading both the `app.py` and `remoteapp.pyc` files (decompiled) we were unable to find the flag. We also used `grep FLAG -R /` in order to recursively check each file for the flag, without any luck.
 
 `app.py`
 ```python
@@ -91,6 +91,3 @@ def save_query(data):
 ```
 
 Finally, we saw that a redis server was running. Issuing a simple `redis-cli get FLAG` revealed the flag.
-
--ishtar
--CYberMouflons
