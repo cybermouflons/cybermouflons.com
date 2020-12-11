@@ -24,7 +24,7 @@ cybermouflons:
 url: "/" #
 baseurl: 
 permalink: /:title/
-google_analytics: # leave it blank if not wish
+google_analytics: "UA-148838738-1"
 fb_appid:
 
 # Collection setting
