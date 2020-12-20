@@ -48,7 +48,8 @@ write(3, "Logger initialized.\n", 20)   = 20
 ```
 
 The first interesting thing we notice are the lines 
-```openat(AT_FDCWD, "/tmp/log.error.4dStN0", O_RDWR|O_CREAT|O_EXCL, 0600) = 3
+```
+openat(AT_FDCWD, "/tmp/log.error.4dStN0", O_RDWR|O_CREAT|O_EXCL, 0600) = 3
 unlink("/tmp/log.error.4dStN0")         = 0
 ```
 A temporary file is created and is immidiately unlinked (deleted).
