@@ -1,4 +1,3 @@
-
 ---
 title: '[XMAS CTF 2020] Ministerul Mediului, Apelor și Pădurilor'
 published: true
