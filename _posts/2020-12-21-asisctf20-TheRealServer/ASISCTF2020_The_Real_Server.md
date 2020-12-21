@@ -1,6 +1,11 @@
-# ASISCTF2020 — The Real Server
+---
+title: '[ASIS CTF 2020] The Real Server'
+published: true
+tags: [writeup, web, prototype pollution]
+author: ishtar
+---
 
-## The Real Server
+## Challenge Description
 
 The flag is in `the-real-server` not in `the-fake-server`.
 
@@ -8,7 +13,7 @@ The flag is in `the-real-server` not in `the-fake-server`.
 
 ---
 
-![image1.png](./image1.png)
+![image1.png](./images/image1.png)
 
 Website Functionality and Interface
 
