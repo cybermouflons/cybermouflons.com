@@ -13,6 +13,7 @@ The flag is in `the-real-server` not in `the-fake-server`.
 
 ---
 
+
 ![image1.png](./images/image1.png)
 
 Website Functionality and Interface
