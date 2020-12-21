@@ -1,7 +1,7 @@
 ---
 title: '[ASIS CTF 2020] The Real Server'
 published: true
-tags: [writeup, web, prototype pollution]
+tags: [writeup, web, prototype_pollution]
 author: ishtar
 ---
 
@@ -10,8 +10,6 @@ author: ishtar
 The flag is in `the-real-server` not in `the-fake-server`.
 
 [Link](https://the-healthcheck-server.asisctf.com/)
-
----
 
 ![image1.png](./images/image1.png)
 
