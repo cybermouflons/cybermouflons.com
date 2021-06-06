@@ -1,7 +1,7 @@
 # Site settings
-title: CYberMouflons Theme
+title: CYberMouflons
 description: >- # site description
-  This is the official CYberMouflons Jekyll theme
+  Cypriot Cybersecurity Community
 lang: en-US # default lang
 timezone: Europe/Athens
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
