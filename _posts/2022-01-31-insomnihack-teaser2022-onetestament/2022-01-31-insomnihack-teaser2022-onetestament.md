@@ -2,7 +2,7 @@
 title: '[Insomnihack Teaser 2022] One Testament'
 published: true
 tags: [writeup, pwn, heap]
-author: s3nn__  &&  [un!ↄ0rn]$
+author: s3nn__   &&   [un!ↄ0rn]$
 ---
 
 ## Challenge Description
