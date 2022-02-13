@@ -10,10 +10,6 @@
   url: /blog/
   external: false
 
-- title: projects
-  url: /blog/
-  external: false
-
 - title: about
   url: /about/
   external: false
